@@ -2,23 +2,880 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Dirk Strong Van Curan II - Data Scientist portfolio showcasing machine learning projects, data analysis, and technical writing">
+  <meta name="keywords" content="data science, machine learning, Python, SQL, AWS, portfolio">
+  <meta name="author" content="Dirk Strong Van Curan II">
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="Dirk Strong Van Curan II - Data Scientist Portfolio">
+  <meta property="og:description" content="Portfolio showcasing data science projects, machine learning models, and technical expertise">
+  <meta property="og:image" content="img/dirk_profile.jpeg">
+  <meta property="og:url" content="https://dirkstrong1.github.io">
 
-  <title>Dirk Strong Van Curan II</title>
-  <link rel="icon" href="">
+  <title>Dirk Strong Van Curan II - Data Scientist Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
+  
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
-  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="css/resume.css" rel="stylesheet">
+  
+  <!-- Particle.js for background effects -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  
+  <style>
+    /* Custom styles for tech stack badges and dark mode */
+    body {
+      font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
+      background-color: #F0F2EB;
+      color: #1A2F1C;
+      transition: all 0.3s ease;
+    }
 
+    h1, h2, h3, h4, h5, h6, .subheading {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: #1A2F1C;
+      font-weight: 600;
+    }
+
+    .text-primary {
+      color: #1A2F1C !important;
+    }
+
+    /* Name styling */
+    .name-heading {
+      color: #1A2F1C;
+    }
+
+    .social-icons a {
+      background-color: rgba(45, 90, 64, 0.2);
+      color: #2D5A40;
+      border: 2px solid rgba(45, 90, 64, 0.3);
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .social-icons a:hover {
+      background-color: #2D5A40;
+      color: #F0F2EB;
+      border-color: #2D5A40;
+      box-shadow: 0 4px 8px rgba(45, 90, 64, 0.2);
+      transform: translateY(-2px);
+    }
+
+    hr.m-0 {
+      border-top: 1px solid rgba(26, 47, 28, 0.1);
+      margin: 2rem 0;
+    }
+
+    .tech-stack .badge {
+      padding: 0.35rem 0.75rem;
+      font-size: 0.75rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      min-width: auto;
+      min-height: auto;
+      background: linear-gradient(135deg, rgba(45, 90, 64, 0.1), rgba(45, 90, 64, 0.05));
+      border: 1px solid rgba(45, 90, 64, 0.3);
+      border-radius: 15px;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      color: #2D5A40;
+      font-weight: 500;
+    }
+
+    .tech-stack .badge::before,
+    .tech-stack .badge::after {
+      display: none;
+    }
+
+    .tech-stack .badge i {
+      font-size: 0.9rem;
+      margin-right: 0.4rem;
+    }
+
+    .tech-stack .badge span {
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .tech-stack .badge:hover {
+      transform: translateY(-1px);
+      background: linear-gradient(135deg, rgba(45, 90, 64, 0.15), rgba(45, 90, 64, 0.1));
+      border-color: rgba(45, 90, 64, 0.4);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="dark"] .tech-stack .badge {
+      background: linear-gradient(135deg, rgba(116, 185, 255, 0.15), rgba(116, 185, 255, 0.1));
+      border: 1px solid rgba(116, 185, 255, 0.3);
+      color: #74b9ff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    [data-theme="dark"] .tech-stack .badge:hover {
+      background: linear-gradient(135deg, rgba(116, 185, 255, 0.2), rgba(116, 185, 255, 0.15));
+      border-color: rgba(116, 185, 255, 0.4);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .skills-list .badge {
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: #1A2F1C;
+      font-weight: 500;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      width: 160px;
+      height: 160px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: visible;
+      background: none;
+      border: none;
+      border-radius: 24px;
+    }
+
+    .skills-list .badge::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(45, 90, 64, 0.15) 0%, rgba(45, 90, 64, 0.15) 100%);
+      border-radius: inherit;
+      z-index: 1;
+      transition: all 0.3s ease;
+    }
+
+    .skills-list .badge::after {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
+      border-radius: inherit;
+      z-index: 1;
+    }
+
+    .skills-list .badge:hover {
+      transform: translateY(-5px);
+    }
+
+    .skills-list .badge:hover::before {
+      background: linear-gradient(135deg, rgba(45, 90, 64, 0.35) 0%, rgba(45, 90, 64, 0.35) 100%);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    [data-theme="dark"] .skills-list .badge::before {
+      background: linear-gradient(135deg, rgba(116, 185, 255, 0.15) 0%, rgba(116, 185, 255, 0.15) 100%);
+    }
+
+    [data-theme="dark"] .skills-list .badge::after {
+      background: linear-gradient(135deg, rgba(28, 40, 38, 0.95) 0%, rgba(28, 40, 38, 0.95) 100%);
+    }
+
+    [data-theme="dark"] .skills-list .badge:hover::before {
+      background: linear-gradient(135deg, rgba(116, 185, 255, 0.35) 0%, rgba(116, 185, 255, 0.35) 100%);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .skills-list .badge i {
+      font-size: 2.8rem;
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    }
+
+    .skills-list .badge span {
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.25px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+      color: #1A2F1C;
+      line-height: 1.3;
+      max-width: 130px;
+      word-wrap: break-word;
+      hyphens: auto;
+      margin-top: 0.5rem;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+    }
+
+    /* Brand colors for both light and dark mode */
+    .badge i.fab.fa-python,
+    [data-theme="dark"] .badge i.fab.fa-python {
+      background: linear-gradient(135deg, #4B8BBE, #FFE873);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 4px rgba(75, 139, 190, 0.3));
+    }
+
+    .badge i.fas.fa-brain,
+    [data-theme="dark"] .badge i.fas.fa-brain {
+      color: #F7931E;
+      filter: drop-shadow(0 2px 4px rgba(247, 147, 30, 0.3));
+    }
+
+    .badge i.fas.fa-network-wired,
+    [data-theme="dark"] .badge i.fas.fa-network-wired {
+      color: #FF6F00;
+      filter: drop-shadow(0 2px 4px rgba(255, 111, 0, 0.3));
+    }
+
+    .badge i.fas.fa-table,
+    [data-theme="dark"] .badge i.fas.fa-table {
+      color: #150458;
+      filter: drop-shadow(0 2px 4px rgba(21, 4, 88, 0.3));
+    }
+
+    .badge i.fas.fa-cube,
+    [data-theme="dark"] .badge i.fas.fa-cube {
+      color: #013243;
+      filter: drop-shadow(0 2px 4px rgba(1, 50, 67, 0.3));
+    }
+
+    .badge i.fab.fa-aws,
+    [data-theme="dark"] .badge i.fab.fa-aws {
+      background: linear-gradient(135deg, #FF9900, #FFC300);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 4px rgba(255, 153, 0, 0.3));
+    }
+
+    .badge i.fab.fa-docker,
+    [data-theme="dark"] .badge i.fab.fa-docker {
+      background: linear-gradient(135deg, #0DB7ED, #384D54);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 4px rgba(13, 183, 237, 0.3));
+    }
+
+    .badge i.fab.fa-git-alt,
+    [data-theme="dark"] .badge i.fab.fa-git-alt {
+      color: #F05032;
+      filter: drop-shadow(0 2px 4px rgba(240, 80, 50, 0.3));
+    }
+
+    .badge i.fas.fa-book-reader,
+    [data-theme="dark"] .badge i.fas.fa-book-reader {
+      color: #F37626;
+      filter: drop-shadow(0 2px 4px rgba(243, 118, 38, 0.3));
+    }
+
+    .badge i.fas.fa-database,
+    [data-theme="dark"] .badge i.fas.fa-database {
+      background: linear-gradient(135deg, #336791, #2F6792);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 4px rgba(51, 103, 145, 0.3));
+    }
+
+    .badge i.fas.fa-leaf,
+    [data-theme="dark"] .badge i.fas.fa-leaf {
+      color: #4DB33D;
+      filter: drop-shadow(0 2px 4px rgba(77, 179, 61, 0.3));
+    }
+
+    /* Additional icons */
+    .badge i.fas.fa-chart-bar,
+    [data-theme="dark"] .badge i.fas.fa-chart-bar {
+      color: #276DC3;
+      filter: drop-shadow(0 2px 4px rgba(39, 109, 195, 0.3));
+    }
+
+    .badge i.fab.fa-html5,
+    [data-theme="dark"] .badge i.fab.fa-html5 {
+      color: #E34F26;
+      filter: drop-shadow(0 2px 4px rgba(227, 79, 38, 0.3));
+    }
+
+    .badge i.fab.fa-js,
+    [data-theme="dark"] .badge i.fab.fa-js {
+      color: #F7DF1E;
+      filter: drop-shadow(0 2px 4px rgba(247, 223, 30, 0.3));
+    }
+
+    .badge i.fas.fa-robot,
+    [data-theme="dark"] .badge i.fas.fa-robot {
+      background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 4px rgba(255, 107, 107, 0.3));
+    }
+
+    /* Dark mode - preserve brand colors */
+    [data-theme="dark"] .skills-list .badge span {
+      color: #EAEFE9;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    [data-theme="dark"] .skills-list .badge i {
+      filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.15));
+    }
+
+    [data-theme="dark"] .badge i.fas.fa-chart-line,
+    [data-theme="dark"] .badge i.fas.fa-calculator {
+      color: #74b9ff;
+    }
+
+    /* Dark mode adjustments */
+    [data-theme="dark"] {
+      background-color: #162220 !important;
+      color: #EAEFE9;
+    }
+    
+    [data-theme="dark"] body {
+      background-color: #162220 !important;
+      color: #EAEFE9;
+    }
+
+    [data-theme="dark"] h1, 
+    [data-theme="dark"] h2, 
+    [data-theme="dark"] h3, 
+    [data-theme="dark"] h4, 
+    [data-theme="dark"] h5, 
+    [data-theme="dark"] h6, 
+    [data-theme="dark"] .subheading {
+      color: #EAEFE9;
+    }
+
+    [data-theme="dark"] .name-heading,
+    [data-theme="dark"] .text-primary {
+      color: #EAEFE9 !important;
+    }
+
+    [data-theme="dark"] .subheading {
+      color: #EAEFE9;
+      font-weight: 500;
+    }
+
+    /* Email link styling */
+    .subheading a {
+      color: #4C9A75;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      padding: 2px 4px;
+      margin: -2px -4px;
+      border-radius: 3px;
+      font-weight: 700;
+      background: none;
+    }
+
+    .subheading a:hover {
+      background-color: rgba(76, 154, 117, 0.18);
+      color: #3B7A57;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Dark mode email link */
+    [data-theme="dark"] .subheading a {
+      color: #7FBA9A;
+      background: none;
+    }
+
+    [data-theme="dark"] .subheading a:hover {
+      background-color: rgba(127, 186, 154, 0.15);
+      color: #8FD4B0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    [data-theme="dark"] .lead {
+      color: #EAEFE9;
+      opacity: 0.9;
+    }
+
+    [data-theme="dark"] #sideNav {
+      background-color: rgba(22, 34, 32, 0.98) !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    [data-theme="dark"] .theme-switch {
+      background-color: rgba(234, 239, 233, 0.05);
+      border-color: rgba(234, 239, 233, 0.1);
+      color: #EAEFE9;
+    }
+
+    [data-theme="dark"] .theme-switch:hover {
+      background-color: #3B7A57;
+      border-color: #3B7A57;
+      color: #EAEFE9;
+    }
+
+    [data-theme="dark"] .resume-section {
+      background-color: #1C2826 !important;
+    }
+
+    [data-theme="dark"] .container-fluid {
+      background-color: #1C2826 !important;
+    }
+
+    [data-theme="dark"] a {
+      color: #7FBA9A;
+      border-bottom-color: rgba(127, 186, 154, 0.3);
+    }
+
+    [data-theme="dark"] a:hover {
+      color: #162220;
+      background-color: #7FBA9A;
+      border-bottom-color: #7FBA9A;
+    }
+
+    [data-theme="dark"] .navbar {
+      background-color: rgba(22, 34, 32, 0.98) !important;
+    }
+
+    [data-theme="dark"] .navbar-dark .navbar-nav .nav-link {
+      color: #EAEFE9;
+    }
+
+    [data-theme="dark"] .navbar-dark .navbar-nav .nav-link:hover,
+    [data-theme="dark"] .navbar-dark .navbar-nav .nav-link.active {
+      color: #162220;
+      background-color: #EAEFE9;
+    }
+
+    /* Ensure smooth transitions for all elements */
+    *, *::before, *::after {
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+    
+    .project-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .skills-section {
+      margin-bottom: 2rem;
+    }
+    
+    .skills-category {
+      margin-bottom: 1.5rem;
+    }
+    
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+    
+    .skills-list .badge i {
+      font-size: 2.6rem;
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    }
+
+    .skills-list .badge span {
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.25px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+      color: #1A2F1C;
+      line-height: 1.2;
+      max-width: 120px;
+      word-wrap: break-word;
+      hyphens: auto;
+      margin-top: 0.3rem;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+    }
+    
+    .theme-switch {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1000;
+    }
+
+    /* Animation keyframes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* Enhanced animations and interactions */
+    .resume-section {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    /* Project card enhancements */
+    .resume-item {
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .resume-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(45, 90, 64, 0.03));
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .resume-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .resume-item:hover::before {
+      opacity: 1;
+    }
+
+    /* Scroll to top button */
+    .scroll-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-color: rgba(45, 90, 64, 0.9);
+      color: #F0F2EB;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+    }
+
+    .scroll-top:hover {
+      transform: translateY(-3px);
+      background-color: #2D5A40;
+    }
+
+    /* Dark mode enhancements */
+    [data-theme="dark"] .resume-item::before {
+      background: linear-gradient(45deg, transparent, rgba(116, 185, 255, 0.03));
+    }
+
+    [data-theme="dark"] .scroll-top {
+      background-color: rgba(116, 185, 255, 0.9);
+      color: #162220;
+    }
+
+    [data-theme="dark"] .scroll-top:hover {
+      background-color: #74b9ff;
+    }
+
+    /* Custom cursor effect for interactive elements */
+    a, button, .badge {
+      cursor: pointer;
+      position: relative;
+    }
+
+    a:active, button:active, .badge:active {
+      transform: scale(0.98);
+    }
+
+    /* Particle background */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    /* Skill progress bars */
+    .skill-progress {
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-progress h4 {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .progress {
+      height: 0.6rem;
+      background-color: rgba(45, 90, 64, 0.1);
+      border-radius: 0.3rem;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      background-color: #2D5A40;
+      transition: width 1.5s ease-in-out;
+    }
+
+    [data-theme="dark"] .progress {
+      background-color: rgba(234, 239, 233, 0.1);
+    }
+
+    [data-theme="dark"] .progress-bar {
+      background-color: #7FBA9A;
+    }
+
+    /* Project gallery */
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      color: white;
+      padding: 1rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      transform: translateY(0);
+    }
+
+    /* Loading animation */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #F0F2EB;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    [data-theme="dark"] .loading-overlay {
+      background-color: #162220;
+    }
+
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(45, 90, 64, 0.3);
+      border-radius: 50%;
+      border-top-color: #2D5A40;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Timeline styles */
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background-color: rgba(45, 90, 64, 0.2);
+    }
+
+    .timeline-item {
+      margin-bottom: 2rem;
+      position: relative;
+      width: 50%;
+      padding: 0 2rem;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: #2D5A40;
+      top: 0;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot {
+      right: -8px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+      left: -8px;
+    }
+
+    [data-theme="dark"] .timeline::before {
+      background-color: rgba(234, 239, 233, 0.2);
+    }
+
+    [data-theme="dark"] .timeline-dot {
+      background-color: #74b9ff;
+    }
+
+    [data-theme="dark"] .skills-list .badge {
+      background: rgba(22, 34, 32, 0.95);
+      border: 1px solid rgba(116, 185, 255, 0.3);
+    }
+
+    [data-theme="dark"] .skills-list .badge::before {
+      background: linear-gradient(135deg,
+        rgba(22, 34, 32, 0.98) 0%,
+        rgba(22, 34, 32, 0.95) 50%,
+        rgba(22, 34, 32, 0.98) 100%
+      );
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    [data-theme="dark"] .skills-list .badge::after {
+      background: linear-gradient(135deg,
+        rgba(22, 34, 32, 0.98) 0%,
+        rgba(22, 34, 32, 1) 50%,
+        rgba(22, 34, 32, 0.98) 100%
+      );
+    }
+
+    /* Keep brand colors consistent in dark mode */
+    [data-theme="dark"] .skills-list .badge span {
+      color: #EAEFE9;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Hover effects */
+    .skills-list .badge:hover {
+      transform: translateY(-3px);
+    }
+
+    .skills-list .badge:hover::before {
+      background: linear-gradient(135deg, rgba(45, 90, 64, 0.35) 0%, rgba(45, 90, 64, 0.35) 100%);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    [data-theme="dark"] .skills-list .badge::before {
+      background: linear-gradient(135deg, rgba(116, 185, 255, 0.15) 0%, rgba(116, 185, 255, 0.15) 100%);
+    }
+
+    [data-theme="dark"] .skills-list .badge::after {
+      background: linear-gradient(135deg, rgba(28, 40, 38, 0.95) 0%, rgba(28, 40, 38, 0.95) 100%);
+    }
+
+    [data-theme="dark"] .skills-list .badge:hover::before {
+      background: linear-gradient(135deg, rgba(116, 185, 255, 0.35) 0%, rgba(116, 185, 255, 0.35) 100%);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+      color: #1A2F1C;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      margin: 0.2rem 0;
+    }
+
+    .navbar-dark .navbar-nav .nav-link:hover,
+    .navbar-dark .navbar-nav .nav-link.active {
+      color: #F0F2EB;
+      background-color: #2D5A40;
+      transform: translateX(5px);
+    }
+
+    [data-theme="dark"] .navbar-dark .navbar-nav .nav-link {
+      color: #EAEFE9;
+    }
+
+    [data-theme="dark"] .navbar-dark .navbar-nav .nav-link:hover,
+    [data-theme="dark"] .navbar-dark .navbar-nav .nav-link.active {
+      color: #162220;
+      background-color: #EAEFE9;
+    }
+  </style>
 </head>
 
 <body id="page-top">
@@ -39,6 +896,9 @@
           <a class="nav-link js-scroll-trigger" href="#about">About</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
         </li>
         <li class="nav-item">
@@ -52,7 +912,7 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
       <div class="w-100">
-        <h1 class="mb-0">Dirk
+        <h1 class="mb-0 name-heading">Dirk
           <span class="text-primary">Van Curan II</span>
         </h1>
         <div class="subheading mb-5">Data Scientist · (970) 376-3522 ·
@@ -77,6 +937,106 @@
 
     <hr class="m-0">
 
+    <button class="theme-switch btn btn-sm btn-outline-primary" onclick="toggleTheme()">
+      <i class="fas fa-moon"></i> Toggle Dark Mode
+    </button>
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
+      <div class="w-100">
+        <h2 class="mb-5">Skills</h2>
+        
+        <div class="skills-section">
+          <div class="skills-category">
+            <h3 class="mb-3">Programming Languages</h3>
+            <div class="skills-list">
+              <div class="badge badge-pill badge-light">
+                <i class="fab fa-python"></i>
+                <span>Python</span>
+              </div>
+              <div class="badge badge-pill badge-light">
+                <i class="fas fa-database"></i>
+                <span>SQL</span>
+              </div>
+              <div class="badge badge-pill badge-light">
+                <i class="fas fa-chart-bar"></i>
+                <span>R</span>
+              </div>
+              <div class="badge badge-pill badge-light">
+                <i class="fab fa-html5"></i>
+                <span>HTML/CSS</span>
+              </div>
+              <div class="badge badge-pill badge-light">
+                <i class="fab fa-js"></i>
+                <span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skills-category">
+            <h3 class="mb-3">Data Science & ML</h3>
+            <div class="skills-list">
+              <div class="badge badge-pill badge-light">
+                <i class="fas fa-robot"></i>
+                <span>Machine Learning</span>
+              </div>
+              <div class="badge badge-pill badge-light">
+                <i class="fas fa-chart-line"></i>
+                <span>Data Visualization</span>
+              </div>
+              <div class="badge badge-pill badge-light">
+                <i class="fas fa-brain"></i>
+                <span>Scikit-learn</span>
+              </div>
+              <div class="badge badge-pill badge-light">
+                <i class="fas fa-network-wired"></i>
+                <span>TensorFlow</span>
+              </div>
+              <div class="badge badge-pill badge-light">
+                <i class="fas fa-table"></i>
+                <span>Pandas</span>
+              </div>
+              <div class="badge badge-pill badge-light">
+                <i class="fas fa-cube"></i>
+                <span>NumPy</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skills-category">
+            <h3 class="mb-3">Cloud & Tools</h3>
+            <div class="skills-list">
+              <div class="badge badge-pill badge-light">
+                <i class="fab fa-aws"></i>
+                <span>AWS</span>
+              </div>
+              <div class="badge badge-pill badge-light">
+                <i class="fab fa-docker"></i>
+                <span>Docker</span>
+              </div>
+              <div class="badge badge-pill badge-light">
+                <i class="fab fa-git-alt"></i>
+                <span>Git</span>
+              </div>
+              <div class="badge badge-pill badge-light">
+                <i class="fas fa-book-reader"></i>
+                <span>Jupyter</span>
+              </div>
+              <div class="badge badge-pill badge-light">
+                <i class="fas fa-database"></i>
+                <span>PostgreSQL</span>
+              </div>
+              <div class="badge badge-pill badge-light">
+                <i class="fas fa-leaf"></i>
+                <span>MongoDB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="projects">
       <div class="w-100">
         <h2 class="mb-5">Projects</h2>
@@ -85,6 +1045,12 @@
           <div class="resume-content">
             <h3 class="mb-0">Football Player Prediction</h3>
             <div class="subheading mb-3">Determining football player archetypes through machine learning.</div>
+            <div class="tech-stack mb-2">
+              <span class="badge badge-pill badge-light">Python</span>
+              <span class="badge badge-pill badge-light">Scikit-learn</span>
+              <span class="badge badge-pill badge-light">Streamlit</span>
+              <span class="badge badge-pill badge-light">Render</span>
+            </div>
             <p>
               The mission of this project is to empower both coaches and players
               to develop better team play by understanding archetypes of playing 
@@ -108,7 +1074,8 @@
             </p>
           </div>
           <div class="resume-date text-md-right">
-            <a href="https://football-player-predictor-app-91a9ee3ece65.herokuapp.com/" class="text-primary">Demo App</a>
+            <a href="https://football-player-predictor-deployment.onrender.com/" class="text-primary mb-2 d-block">Demo App</a>
+            <a href="https://github.com/dirkstrong1/football_player_predictor_deployment" class="text-primary">View Code <i class="fab fa-github"></i></a>
           </div>
         </div>
 
@@ -116,6 +1083,13 @@
           <div class="resume-content">
             <h3 class="mb-0">King County Housing: Price Predictions</h3>
             <div class="subheading mb-3">Determining housing prices by discovering the key contributing factors.</div>
+            <div class="tech-stack mb-2">
+              <span class="badge badge-pill badge-light">Python</span>
+              <span class="badge badge-pill badge-light">Pandas</span>
+              <span class="badge badge-pill badge-light">Scikit-learn</span>
+              <span class="badge badge-pill badge-light">Matplotlib</span>
+              <span class="badge badge-pill badge-light">Seaborn</span>
+            </div>
             <p>
                 Our approach to this model was to discover key variables that can help accurately 
                 determine sale price of a home in King County.
@@ -143,7 +1117,8 @@
             </p>
           </div>
           <div class="resume-date text-md-right">
-            <a href="jupyter_notebooks/housing_preditions.html" class="text-primary">View Jupyter Notebook</a>
+            <a href="jupyter_notebooks/housing_preditions.html" class="text-primary mb-2 d-block">View Analysis</a>
+            <a href="https://github.com/dirkstrong1/King_County_Housing" class="text-primary">View Code <i class="fab fa-github"></i></a>
           </div>
         </div>
 
@@ -205,6 +1180,145 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/resume.min.js"></script>
+  
+  <script>
+    // Dark mode functionality
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      
+      const button = document.querySelector('.theme-switch i');
+      button.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+    
+    // Set initial theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    const button = document.querySelector('.theme-switch i');
+    button.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+
+    // Scroll to top functionality
+    const scrollTop = document.querySelector('.scroll-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollTop.classList.add('visible');
+      } else {
+        scrollTop.classList.remove('visible');
+      }
+    });
+
+    scrollTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Animate sections on scroll
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.resume-section').forEach(section => {
+      section.style.opacity = '0';
+      observer.observe(section);
+    });
+  </script>
+
+  <div class="scroll-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- Add after opening body tag -->
+  <div id="particles-js"></div>
+  <div class="loading-overlay">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <!-- Add before the closing body tag -->
+  <script>
+    // Particle.js configuration
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: '#2D5A40' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.5, random: false },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: '#2D5A40',
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'out',
+          bounce: false
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: { enable: true, mode: 'repulse' },
+          onclick: { enable: true, mode: 'push' },
+          resize: true
+        }
+      },
+      retina_detect: true
+    });
+
+    // Loading animation
+    window.addEventListener('load', () => {
+      const loadingOverlay = document.querySelector('.loading-overlay');
+      loadingOverlay.style.opacity = '0';
+      setTimeout(() => {
+        loadingOverlay.style.display = 'none';
+      }, 500);
+    });
+
+    // Update particle colors for dark mode
+    function updateParticleColors(isDark) {
+      const color = isDark ? '#74b9ff' : '#2D5A40';
+      if (window.pJSDom && window.pJSDom[0]) {
+        const particles = window.pJSDom[0].pJS.particles;
+        particles.color.value = color;
+        particles.line_linked.color = color;
+        particles.array.forEach(p => {
+          p.color = color;
+        });
+      }
+    }
+
+    // Modify theme toggle to update particles
+    const originalToggleTheme = window.toggleTheme;
+    window.toggleTheme = function() {
+      originalToggleTheme();
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      updateParticleColors(isDark);
+    };
+
+    // Initialize particle colors based on current theme
+    updateParticleColors(document.documentElement.getAttribute('data-theme') === 'dark');
+  </script>
 
 </body>
 
